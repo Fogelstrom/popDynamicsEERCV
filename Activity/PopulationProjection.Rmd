@@ -1,25 +1,17 @@
 ---
 title: "Population projection"
 output:
-  html_document:
+  html_document: 
     code_folding: show
-date: "20 February 2019"
+    toc: yes
+date: "28 January 2020"
 ---
 
-####Introduction  
+### Introduction  
   
-We are now going to try different methods of predicting the future growth and of estimating the (long term) growth rate, $\lambda$ for the common frog.  
-
-  
-First, you will need to install the package `popbio`:  
-
-In RStudio: `Tools/Install packages` ...   
-In R console: `install.packages("popbio")`  
-
+We are going to try different methods of predicting the future growth and of estimating the (long term) growth rate, $\lambda$ for the common frog, *Rana temporaria*. 
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/European_Common_Frog_Rana_temporaria.jpg/1024px-European_Common_Frog_Rana_temporaria.jpg" width="200" height="200" />
-
-
 
 The equation we use to project a age/stage- or size structured population is: 
 
@@ -54,6 +46,7 @@ This species has three stages;
   
 - Pre-juvenile (or first year, which involves egg, tadpole and over-wintering metamorph)  
 - Juvenile (next 2 years)  
+
 - Adult 
 
 And this is the population vector, **n**: 
@@ -75,8 +68,10 @@ $$\mathbf{n}(t+1) = \left[\begin{array}
 0.000 \times 70 + 0.08 \times 20 + 0.430  \times 10 \\
 \end{array}\right]$$ 
 
+### Matrix multiplication  
 
-Now, enter the projection matrix into R. 
+
+Enter the projection matrix into R. 
 
 ```{r, eval = FALSE}
 #create an empty matrix and specify the dimensions (3 * 3) 
@@ -114,7 +109,7 @@ A %*% n0 # This gives us population size at time t+1
 
 Make sure that you understand what the different values represent:  
 
-a) What is in the first row? 
+- What is in the first row? 
 
 ```{r, include = FALSE, eval = FALSE}
 # Reproductive contribution of class j to the next time-step. 
@@ -122,7 +117,7 @@ a) What is in the first row?
 
 ```
 
-b) Which values are on the diagonal of the matrix?  
+- Which values are on the diagonal of the matrix?  
 
 ```{r, include = FALSE, eval = FALSE}
 #Proportion of individuals that survive to 
@@ -130,7 +125,7 @@ b) Which values are on the diagonal of the matrix?
 ```
 
 
-c) What is the subdiagonal? 
+- What is the subdiagonal? 
 ```{r, include = FALSE, eval = FALSE}
 #Proportion of individuals that survive 
 #and move to the next time step in the next year
@@ -156,7 +151,10 @@ sum(n2) 	# To get total number of individuals
 # To view the proportional distribution among classes: 
 n2/sum(n2) 	
 ```
-  
+
+
+### Population projection: manual perturbations  
+
 Now, we will **predict the future growth** of this population and **estimate the (long term) growth rate $\lambda$** by calculating $\lambda$ for each time step.
 
 At some point $\lambda$ and the proportion of individuals in each life-stage will stabilize. This is called the **stable stage distribution**. Will find out how long it takes to reach the stable stage distribution. (We will consider $\lambda$ stable when the first four decimal places have stabilised (i.e. are unchanged among iterations)). 
@@ -235,19 +233,24 @@ plot(0:(years-1), Lambdas, xlab="Time(t)", ylab=expression(lambda), las=1, type=
 matplot(0:years, N, xlab="Time (t)", ylab="Population size", font.lab=2,type="l",lwd=2)  
 ```
 
-Now that you've done all this hard work it's time for me to tell you that we can derive growth rate $\lambda$, stable stage distribution and reproductive values directly from the matrix, without doing the projection (the `for-loop`). This is because $\lambda$, stable stage distribution and reproductive values are all mathematical properties of the transition matrix (Caswell 2001). 
+### Eigen-analysis  
+
+You can also derive the growth rate $\lambda$, stable stage distribution and reproductive values directly from the matrix, without doing the manual perturbations (the `for-loop`). This is because $\lambda$, stable stage distribution and reproductive values are all mathematical properties of the transition matrix (Caswell 2001).  
+
 - **The dominant eigenvalue equals $\lambda$**, the long-term population growth rate  
+
 - **The right eigenvector (w)** of the dominant eigenvalue is a vector that provides the stable stage distribution.  
+
 - **The left eigenvector (v)** of the dominant eigenvalue is a vector that provides reproductive values. 
  
-We can do a so called `eigen analysis` using the `popbio` package:
+We can do a so called `eigen analysis` using the `popbio` package ...  
 
 ```{r, eval = FALSE}
 library(popbio) #Load package 
 eigen.analysis(A) 
 ```
 
-or just extract the parameters that we're after directly:
+... or just extract the parameters that we're after directly:
 
 ```{r eval = FALSE}
 lambda(A)
@@ -267,9 +270,49 @@ N <-pop.projection(A=A, n=n0, iterations=30)
 N 
 ```
 
+### Assignment, part 1
+
+How will the population structure affect the short-term dynamics in the frog population?
+
+In the first case, we start with 100 individuals distributed over the different life-stages according to the stable stage distribution:
+
+```{r, eval = FALSE}
+n0_1 <- stable.stage(A)*100 
+n0_1
+```
+
+In the second case, we start with 100 individuals, all adults.
+```{r, eval = FALSE}
+n0_2 <- c(0,0,100) 
+n0_2
+```
+
+In the third case, start with 100 individuals, all pre-juveniles.
+```{r, eval = FALSE}
+n0_3 <- c(100,0,0) 
+n0_3
+```
+
+Track each scenario for 14 years (iterations=15).
+```{r, eval = FALSE}
+N1 <- pop.projection(A, n0_1, 14+1) 
+N1$pop.sizes 
+
+N2 <- pop.projection(A, n0_2, 14+1) 
+N2$pop.sizes 
+
+N3 <- pop.projection(A, n0_3, 14+1) 
+N3$pop.sizes
+
+```
 
 
-#####References  
+a)	Why do you think that the population sizes after 14 years differ so much?
+
+b)	If you would attempt a reintroduction program, would you release juveniles or adults?
+
+
+### References  
 Caswell, H. 2001. Matrix Population Models: Construction, Analysis, and Interpretation. 2nd 
 edition. Sinauer Associates, Sunderland, MA. 
 
