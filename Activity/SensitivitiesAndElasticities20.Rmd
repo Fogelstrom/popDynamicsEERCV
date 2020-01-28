@@ -1,14 +1,17 @@
 ---
-title: 'Sensitivities & elasticities'
-subtitle: 'Which vital rates have the strongest influence on population growth rate?'
+title: "2. Sensitivities & elasticities"
 output:
-  html_document: 
+  html_document:
     code_folding: hide
     toc: yes
+  pdf_document: 
+    latex_engine: xelatex
+    toc: yes
 date: "28 January 2020"
+subtitle: Which vital rates have the strongest influence on population growth rate?
 ---
 
-### Sensitivity analysis  
+## Sensitivity analysis  
   
 In this exercise, we will study which vital rates/matrix elements have the strongest influence on population growth rate, $\lambda$.This can be accomplished in two ways; either by using manual perturbation methods, or by using analytical solutions. We will start with the manual perturbation method. 
 
@@ -95,9 +98,9 @@ sensitivitySeedProdTiny
 
 **So far, what is your conclusion regarding management regime?**  
   
-***  
+  
 
-### Elasticity values  
+## Elasticity values  
 
 Let's have a look at the sensitivities for all the matrix elements:  
 ```{r eval = FALSE}
@@ -119,9 +122,9 @@ Conveniently, there are functions in R that will allow us to calculate and plot 
 image2(elasticity(A))
 ```
 
-***  
+  
 
-### Assignment, part 2  
+## Assignment, part 2  
 
 a) Do you reach the same conclusion regarding management regime based on elasticity values as you did from the sensitivity values? Why?  
 
@@ -129,9 +132,9 @@ b) Can you suggest other alternative management scenarios that would have (much)
 
 c) Which life stage / age class would be the best target for management in this case? Why?  
 
-*** 
+ 
 
-### Important points regarding the interpretation of results  
+## Important points regarding the interpretation of results  
 
 * We must remember that analytical sensitivities and elasticities are evaluated at the stable-stage distribution. Results might be very different in real-life situations if the population is far from SSD.  
   
