@@ -1,0 +1,24 @@
+---
+title: ""
+output:
+  html_document:
+    theme: cosmo
+---
+
+##Welcome!
+
+Here's code and instructions for the practical tasks for the session "Population dymamics" on the EERCV course. 
+
+[Population Projections](Activity/PopulationProjection.html)  
+
+[Sensitivities and elasticities](Activity/SensitivitiesAndElasticities.html)  
+
+[Population viability analysis (PVA)](Activity/PopulationViabilityAnalysis.html)  
+
+If you want an extra exercise, try performing a [count-based PVA for the Yellowstone grizzly population](http://www.montana.edu/screel/teaching/bioe-440r-521/course-outline/count-based-PVA-grizzly-data.R)
+
+
+Here's the [lecture](PopulationDynamics_EERCV19.pdf) and the [assignment for today's session](Activity/Assignment.html)
+
+*This is a temporary webpage so please save anything that you want to keep to your personal computer*
+
