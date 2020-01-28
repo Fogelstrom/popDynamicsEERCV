@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title></title>
+<title>index.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -69,9 +69,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -85,7 +83,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -102,8 +99,6 @@ summary {
 </style>
 
 
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
 
@@ -149,6 +144,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -161,20 +157,17 @@ summary {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -189,13 +182,24 @@ $(document).ready(function () {
 
 <div id="welcome" class="section level2">
 <h2>Welcome!</h2>
-<p>Here’s code and instructions for the practical tasks for the session “Population dymamics” on the EERCV course.</p>
+<p>This page contains material and instructions for the session “Population dynamics” on the EERCV course.</p>
+<p><strong>Before the session</strong>, please make sure that you have R and RStudio, as well as the packages <code>popbio</code> (for demographic analysis) and <code>knitr</code> (for visual stuff) installed on your computer. Please also make sure to bring your computer to both the morning and the afternoon session as I will switch between lecturing and practical exercises throughout the day.</p>
+<p><em>This is a temporary webpage so please save anything that you want to keep to your personal computer</em> (for example by printing the pages to a pdf-file)</p>
+<div id="links-to-practical-exercises" class="section level3">
+<h3>Links to practical exercises</h3>
 <p><a href="Activity/PopulationProjection.html">Population Projections</a></p>
 <p><a href="Activity/SensitivitiesAndElasticities.html">Sensitivities and elasticities</a></p>
 <p><a href="Activity/PopulationViabilityAnalysis.html">Population viability analysis (PVA)</a></p>
 <p>If you want an extra exercise, try performing a <a href="http://www.montana.edu/screel/teaching/bioe-440r-521/course-outline/count-based-PVA-grizzly-data.R">count-based PVA for the Yellowstone grizzly population</a></p>
-<p>Here’s the <a href="PopulationDynamics_EERCV19.pdf">lecture</a> and the <a href="Activity/Assignment.html">assignment for today’s session</a></p>
-<p><em>This is a temporary webpage so please save anything that you want to keep to your personal computer</em></p>
+</div>
+<div id="lecture-slides" class="section level3">
+<h3>Lecture slides</h3>
+<p>Here’s the <a href="">lecture</a>.</p>
+</div>
+<div id="assignment" class="section level3">
+<h3>Assignment</h3>
+<p>The assignment is included in the instructions for <a href="Activity/PopulationProjection.html">Population Projections</a> and <a href="Activity/SensitivitiesAndElasticities.html">Sensitivities and elasticities</a>. Hand in the the assignment by 28 February.</p>
+</div>
 </div>
 
 
@@ -215,6 +219,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
