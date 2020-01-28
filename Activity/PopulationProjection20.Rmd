@@ -1,13 +1,16 @@
 ---
-title: "Population projection"
+title: "1. Population projection"
 output:
   html_document: 
     code_folding: show
     toc: yes
+  pdf_document: 
+    latex_engine: xelatex
+    toc: yes
 date: "28 January 2020"
 ---
 
-### Introduction  
+## Introduction  
   
 We are going to try different methods of predicting the future growth and of estimating the (long term) growth rate, $\lambda$ for the common frog, *Rana temporaria*. 
 
@@ -68,7 +71,7 @@ $$\mathbf{n}(t+1) = \left[\begin{array}
 0.000 \times 70 + 0.08 \times 20 + 0.430  \times 10 \\
 \end{array}\right]$$ 
 
-### Matrix multiplication  
+## Matrix multiplication  
 
 
 Enter the projection matrix into R. 
@@ -153,7 +156,7 @@ n2/sum(n2)
 ```
 
 
-### Population projection: manual perturbations  
+## Population projection: manual perturbations  
 
 Now, we will **predict the future growth** of this population and **estimate the (long term) growth rate $\lambda$** by calculating $\lambda$ for each time step.
 
@@ -233,7 +236,7 @@ plot(0:(years-1), Lambdas, xlab="Time(t)", ylab=expression(lambda), las=1, type=
 matplot(0:years, N, xlab="Time (t)", ylab="Population size", font.lab=2,type="l",lwd=2)  
 ```
 
-### Eigen-analysis  
+## Eigen-analysis  
 
 You can also derive the growth rate $\lambda$, stable stage distribution and reproductive values directly from the matrix, without doing the manual perturbations (the `for-loop`). This is because $\lambda$, stable stage distribution and reproductive values are all mathematical properties of the transition matrix (Caswell 2001).  
 
@@ -270,7 +273,7 @@ N <-pop.projection(A=A, n=n0, iterations=30)
 N 
 ```
 
-### Assignment, part 1
+## Assignment, part 1
 
 How will the population structure affect the short-term dynamics in the frog population?
 
@@ -312,7 +315,7 @@ a)	Why do you think that the population sizes after 14 years differ so much?
 b)	If you would attempt a reintroduction program, would you release juveniles or adults?
 
 
-### References  
+## References  
 Caswell, H. 2001. Matrix Population Models: Construction, Analysis, and Interpretation. 2nd 
 edition. Sinauer Associates, Sunderland, MA. 
 
