@@ -1,6 +1,7 @@
 ---
-title: "Info Population Dynamics, EERCV 2020"
+title: "Info, Population Dynamics, EERCV 2020"
 output:
+  word_document: default
   pdf_document: default
 ---
 
@@ -8,10 +9,14 @@ output:
 , as well as the packages `popbio` (for demographic analysis) and `knitr` (for visual stuff) installed on your computer. Please also make sure to **bring your computer to both the morning and the afternoon session** as we will switch between lecture and practical exercises throughout the day.
 
 
-## Webpage
-
+**Material**  
 All material will be uploaded to https://fogelstrom.github.io/popDynamicsEERCV/ . *This is a temporary webpage so save anything that you want to keep to your personal computer* (for example by printing the pages to a pdf-file)
 
-## Assignment  
+**Assignment**  
+The questions for the assignment are included in the instructions for "Population Projections" and "Sensitivities and elasticities". Hand in the the answers to the questions in Athena by 28 February. 
 
-The assignment is included in the instructions for "1. Population Projections" and "2. Sensitivities and elasticities". Hand in the the assignment by 28 February. 
+
+
+See you on Friday!
+
+Elsa
