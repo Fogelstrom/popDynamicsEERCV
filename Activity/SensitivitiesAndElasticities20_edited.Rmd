@@ -41,7 +41,7 @@ Your task is to perform a sensitivity analysis and to use your results to choose
 1) Management that increases seed survival in the seed bank, or  
 2) Management that increases seed production in the smallest size class (tiny)  
 
-The general question for a sensitivity analysis is how a very small change in a particular matrix element (transition probability) affects the population growth rate $\lambda$. You'll find that some matrix elements have a large impact on $\lambda$, whereas other matrix elements do not influence $\lambda$ significantly.  
+The general question for a sensitivity analysis is how a very small change in a particular matrix element (transition) affects the population growth rate $\lambda$. You'll find that a change in some matrix elements have a large impact on $\lambda$, whereas changes to other matrix elements do not influence $\lambda$ significantly.  
 
 Calculate lambda for the matrix ...   
   
