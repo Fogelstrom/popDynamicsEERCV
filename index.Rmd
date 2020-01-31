@@ -16,7 +16,7 @@ This page contains material and instructions for the session "Population dynamic
 
 [Population Projections](Activity/PopulationProjection20.html)  
 
-[Sensitivities and elasticities](Activity/SensitivitiesAndElasticities20_edited.html) (*updated 2020-01-31, all code is now provided*)
+[Sensitivities and elasticities](Activity/SensitivitiesAndElasticities20_edited.html) *updated 2020-01-31, all code is now provided*
 
 [Population viability analysis (PVA)](Activity/PopulationViabilityAnalysis20.html)  
 
