@@ -16,7 +16,7 @@ This page contains material and instructions for the session "Population dynamic
 
 [Population Projections](Activity/PopulationProjection20.html)  
 
-[Sensitivities and elasticities](Activity/SensitivitiesAndElasticities20.html)  
+[Sensitivities and elasticities](ActiSensitivitiesAndElasticities20_edited.html) (*updated 2020-01-31, all code is now provided*)
 
 [Population viability analysis (PVA)](Activity/PopulationViabilityAnalysis20.html)  
 
@@ -24,17 +24,17 @@ If you want an extra exercise, try performing a [count-based PVA for the Yellows
 
 ### Lecture slides  
 
-... will be uploaded here
+can be found [here](Lecture/PopulationDynamics_EERCV20.pdf). 
 
 ```{r, include=FALSE, eval=FALSE}
 
-Here's the [lecture](). 
+
 
 ```
 
 ### Assignment  
 
-The assignment is included in the instructions for [Population Projections](Activity/PopulationProjection20.html) and [Sensitivities and elasticities](Activity/SensitivitiesAndElasticities20.html). Hand in the the assignment by 28 February. 
+The assignment is included in the instructions for [Population Projections](Activity/PopulationProjection20.html) and [Sensitivities and elasticities](ActiSensitivitiesAndElasticities20_edited.html). Hand in the the assignment by 28 February. 
 
 
 
