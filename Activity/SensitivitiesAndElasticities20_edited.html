@@ -468,14 +468,14 @@ image2(A) #plot the mean matrix</code></pre>
 </li>
 <li>Management that increases seed production in the smallest size class (tiny)</li>
 </ol>
-<p>The general question for a sensitivity analysis is how a very small change in a particular matrix element (transition) affects the population growth rate <span class="math inline">\(\lambda\)</span>. You’ll find that a change in some matrix elements have a large impact on <span class="math inline">\(\lambda\)</span>, whereas changes to other matrix elements do not influence <span class="math inline">\(\lambda\)</span> significantly.</p>
+<p>The general question for a sensitivity analysis is how a very small change in a particular matrix element affects the population growth rate <span class="math inline">\(\lambda\)</span>. You’ll find that a changes to some matrix elements have a large impact on <span class="math inline">\(\lambda\)</span>, whereas changes to other matrix elements do not influence <span class="math inline">\(\lambda\)</span> significantly.</p>
 <p>Calculate lambda for the matrix …</p>
 <pre class="r"><code># Lambda is a matematical property of the matrix and we can 
 # extract lambda by using the function &#39;lambda&#39;:
 Lambda &lt;- lambda(A)</code></pre>
 <p>… and create a copy of the matrix that we can modify</p>
 <pre class="r"><code>A_seedBank &lt;- A # create a copy of the mean matrix </code></pre>
-<p>Which matrix element corresponds to survival of seeds in the seed bank?</p>
+<p><strong>Which matrix element corresponds to survival of seeds in the seed bank?</strong></p>
 <p>Add a small value, 0.0001, to the matrix element that is influenced by your management regime. That is, increase the probability of surviving in the seed bank with 0.0001.</p>
 <pre class="r"><code>A_seedBank[1,1] &lt;- A[1,1] + 0.0001 </code></pre>
 <p>Calculate <span class="math inline">\(\lambda\)</span> for the updated matrix A_seedBank, and store as e.g. <code>Lambda_seedBank</code>.</p>
